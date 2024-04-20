@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace IntroSEProject.API.Controllers
+namespace Layer.Presentation.Controllers
 {
     [Authorize(Roles = "Customer, Admin")]
     [ApiController]

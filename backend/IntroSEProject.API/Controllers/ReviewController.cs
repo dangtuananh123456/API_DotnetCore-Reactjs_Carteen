@@ -5,9 +5,9 @@ using IntroSEProject.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace IntroSEProject.API.Controllers
-{
-    [ApiController]
+namespace Layer.Presentation.Controllers
+
+	[ApiController]
     [Route("/api/[controller]")]
     public class ReviewController : Controller
     {

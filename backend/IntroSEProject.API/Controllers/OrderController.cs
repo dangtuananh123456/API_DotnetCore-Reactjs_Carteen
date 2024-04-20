@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 
-namespace IntroSEProject.API.Controllers
+namespace Layer.Presentation.Controllers
 {
     [Authorize(Roles = "Customer, Admin")]
     [ApiController]

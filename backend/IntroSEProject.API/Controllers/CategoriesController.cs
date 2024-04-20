@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace IntroSEProject.API.Controllers
+namespace Layer.Presentation.Controllers
 {
     [ApiController]
     [Route("/api/[controller]")]

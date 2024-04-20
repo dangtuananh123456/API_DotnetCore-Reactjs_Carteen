@@ -26,7 +26,8 @@ namespace IntroSEProject.API.RedisCache
 			var value = database.StringGet(key);
 			if(!string.IsNullOrEmpty(value))
 			{
-				return JsonConvert.DeserializeObject<T>(value);
+				var tem = JsonConvert.DeserializeObject<string>(value);
+				return JsonConvert.DeserializeObject<T>(tem);
 			}
 			return default;
 		}

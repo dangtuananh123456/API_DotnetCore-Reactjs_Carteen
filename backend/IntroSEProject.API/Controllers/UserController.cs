@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SendGrid;
 
-namespace IntroSEProject.API.Controllers
+namespace Layer.Presentation.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

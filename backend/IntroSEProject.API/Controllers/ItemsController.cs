@@ -12,7 +12,7 @@ using Humanizer;
 using Microsoft.AspNetCore.Authentication;
 using Newtonsoft.Json;
 
-namespace IntroSEProject.API.Controllers
+namespace Layer.Presentation.Controllers
 {
     [ApiController]
     [Route("/api/[controller]")]
@@ -23,12 +23,14 @@ namespace IntroSEProject.API.Controllers
 		private AppDbContext dbContext;
         private IMapper mapper;
         private readonly ICacheService cacheService;
+
         public ItemsController(AppDbContext dbContext, IMapper mapper, ICacheService _cacheService)
         {
             this.dbContext = dbContext;
             this.mapper = mapper;
             this.cacheService = _cacheService;
         }
+
         [HttpGet]
         public async Task<IActionResult> GetPaging(int page = 1, int per_page = 0, string keyword = "", int categoryId = 0)
         {
