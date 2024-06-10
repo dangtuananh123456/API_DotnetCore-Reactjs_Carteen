@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System.IO;
 
-namespace IntroSEProject.API.RedisCache
+namespace Layer.Presentation.RedisCache
 {
 	static class ConfigrationCache
 	{

@@ -1,6 +1,6 @@
 ﻿using StackExchange.Redis;
 
-namespace IntroSEProject.API.RedisCache
+namespace Layer.Presentation.RedisCache
 {
 	public class ConnectionCacheHelper
 	{

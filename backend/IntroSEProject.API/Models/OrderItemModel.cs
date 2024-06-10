@@ -1,7 +1,7 @@
 ﻿using AutoMapper.Configuration.Conventions;
-using IntroSEProject.Models;
+//using IntroSEProject.Models;
 
-namespace IntroSEProject.API.Models
+namespace Layer.Presentation.Models
 {
     public class OrderItemModel
     {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace IntroSEProject.API.Models
+namespace Layer.Presentation.Models
 {
     public class LoginModel
     {

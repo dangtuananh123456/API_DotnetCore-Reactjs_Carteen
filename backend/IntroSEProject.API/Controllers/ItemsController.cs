@@ -1,16 +1,17 @@
 ﻿using AutoMapper;
-using IntroSEProject.API.Models;
-using IntroSEProject.API.Services;
-using IntroSEProject.Models;
+using Layer.Application.Services;
+using Layer.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Data.Common;
 using System.Linq.Expressions;
 using Microsoft.AspNetCore.Authorization;
-using IntroSEProject.API.RedisCache;
-using Humanizer;
 using Microsoft.AspNetCore.Authentication;
 using Newtonsoft.Json;
+using Infrastructure.Data;
+using Layer.Presentation.RedisCache;
+using Layer.Presentation.Models;
+using Layer.Domain.Specifications;
 
 namespace Layer.Presentation.Controllers
 {

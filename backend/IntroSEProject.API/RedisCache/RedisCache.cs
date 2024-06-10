@@ -3,9 +3,8 @@
 using Newtonsoft.Json;
 using StackExchange.Redis;
 using System;
-using NuGet.Packaging.Licenses;
 
-namespace IntroSEProject.API.RedisCache
+namespace Layer.Presentation.RedisCache
 {
 	public class RedisCacheService: ICacheService
 	{

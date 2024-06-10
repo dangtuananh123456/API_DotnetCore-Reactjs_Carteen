@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using IntroSEProject.API.Models;
-using IntroSEProject.Models;
+using Layer.Domain.Entities;
+using Layer.Presentation.Models;
 
-namespace IntroSEProject.API.Configs
+namespace Layer.Presentation.Configs
 {
     public class AutoMapperConfig : Profile
     {

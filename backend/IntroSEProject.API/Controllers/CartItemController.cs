@@ -1,8 +1,9 @@
 ﻿using AutoMapper;
-using IntroSEProject.API.Models;
-using IntroSEProject.API.RedisCache;
-using IntroSEProject.API.Services;
-using IntroSEProject.Models;
+using Infrastructure.Data;
+using Layer.Application.Services;
+using Layer.Domain.Entities;
+using Layer.Presentation.Models;
+using Layer.Presentation.RedisCache;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

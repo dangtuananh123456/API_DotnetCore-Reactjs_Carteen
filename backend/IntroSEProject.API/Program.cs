@@ -1,9 +1,7 @@
 ﻿
-using IntroSEProject.API.Configs;
-using IntroSEProject.API.Middlewares;
-using IntroSEProject.API.RedisCache;
-using IntroSEProject.API.Services;
-using IntroSEProject.Models;
+using Infrastructure.Data;
+using Infrastructure.Repositories;
+using Layer.Domain.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Build.Framework;
 using Microsoft.EntityFrameworkCore;
@@ -11,8 +9,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Stripe;
 using System.Text;
+using Layer.Domain.Interfaces;
+using Layer.Application.Services;
+using Layer.Presentation.Configs;
+using Layer.Presentation.RedisCache;
+using Layer.Application.Middlewares;
 
-namespace IntroSEProject.API
+namespace Layer.Application
 {
     public class Program
     {
@@ -22,10 +25,13 @@ namespace IntroSEProject.API
             builder.Services.AddControllersWithViews();
             // Add services to the container.
             builder.Services.AddLogging();
+            //add controller
             builder.Services.AddControllers();
+            //add redis cache service
             builder.Services.AddSingleton<ICacheService, RedisCacheService>();
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+			builder.Services.AddSwaggerGen();
 
             builder.Services.AddDbContext<AppDbContext>(options =>
             {

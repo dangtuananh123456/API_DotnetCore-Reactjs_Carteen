@@ -1,4 +1,4 @@
-﻿namespace IntroSEProject.API.Models
+﻿namespace Layer.Presentation.Models
 {
     public class RefreshTokenModel
     {

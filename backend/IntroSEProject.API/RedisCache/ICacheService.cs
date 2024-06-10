@@ -1,4 +1,4 @@
-﻿namespace IntroSEProject.API.RedisCache
+﻿namespace Layer.Presentation.RedisCache
 {
 	public interface ICacheService
 	{

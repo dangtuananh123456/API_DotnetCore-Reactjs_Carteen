@@ -1,4 +1,4 @@
-﻿namespace IntroSEProject.API.Services
+﻿namespace Layer.Application.Services
 {
     public class SendGridEmailSenderOptions
     {

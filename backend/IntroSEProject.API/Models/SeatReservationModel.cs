@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace IntroSEProject.API.Models
+namespace Layer.Presentation.Models
 {
     public class SeatReservationModel
     {

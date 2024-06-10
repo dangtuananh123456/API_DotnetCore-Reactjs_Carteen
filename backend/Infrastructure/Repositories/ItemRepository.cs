@@ -21,13 +21,16 @@ namespace Infrastructure.Repositories
 
 		public async Task<object> GetTopItem()
 		{
-			var result = dbContext.OrderItems.Where(i => i.Order.Status == "Success").GroupBy(x => x.ItemId)
-			.Select(group => new
-			{
-						Item = mapper.Map<ItemModel>(dbContext.Items.Where(i => i.Id == group.Key).SingleOrDefault()),
-						SoldQuantity = group.Sum(x => x.Quantity)
-					}).OrderByDescending(x => x.SoldQuantity)
-					.Take(5).ToList();
+			var result = await dbContext.OrderItems.Where(i => i.Order.Status == "Success")
+				.GroupBy(x => x.ItemId)
+				.Select(group => new
+				{
+					Item = dbContext.Items.Where(i => i.Id == group.Key).SingleOrDefault(),
+					SoldQuantity = group.Sum(x => x.Quantity)
+				})
+				.OrderByDescending(x => x.SoldQuantity)
+				.Take(5).ToListAsync();
+			return result;
 		}
 	}
 }

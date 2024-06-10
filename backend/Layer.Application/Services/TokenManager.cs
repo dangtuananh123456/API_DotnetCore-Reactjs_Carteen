@@ -1,22 +1,22 @@
-﻿using IntroSEProject.Models;
+﻿
+using Layer.Domain.Entities;
+using Layer.Domain.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace IntroSEProject.API.Services
+namespace Layer.Application.Services
 {
     public class TokenManager : ITokenManager
-    {
+	{
         private readonly IConfiguration configuration;
-        private readonly AppDbContext dbContext;
-
-        public TokenManager(IConfiguration configuration, AppDbContext dbContext)
+        public TokenManager(IConfiguration configuration)
         {
             this.configuration = configuration;
-            this.dbContext = dbContext;
         }
         public (string, DateTime) CreateAccessToken(User user)
         {
@@ -91,7 +91,8 @@ namespace IntroSEProject.API.Services
             if (identity.FindFirst(ClaimTypes.Email) != null)
             {
                 var email = identity.FindFirst(ClaimTypes.Email).Value;
-                var user = await dbContext.Users.FirstOrDefaultAsync(x => x.Email == email);
+                //var user = await dbContext.Users.FirstOrDefaultAsync(x => x.Email == email);
+                User user = new User();
                 if (user == null)
                 {
                     context.Fail("Invalid token");
@@ -134,8 +135,8 @@ namespace IntroSEProject.API.Services
             if (claimPrincipal == null) return ("", default);
             var email = claimPrincipal.Claims.SingleOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
             if (string.IsNullOrEmpty(email)) return ("", default);
-            var user = dbContext.Users.SingleOrDefault(x => x.Email == email);  
-
+            //var user = dbContext.Users.SingleOrDefault(x => x.Email == email);
+            User user = new User();
             return CreateAccessToken(user);
         }
 

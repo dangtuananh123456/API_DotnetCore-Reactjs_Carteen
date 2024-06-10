@@ -1,8 +1,9 @@
 ﻿using Microsoft.Extensions.Options;
 using SendGrid.Helpers.Mail;
 using SendGrid;
+using Layer.Domain.Interfaces;
 
-namespace IntroSEProject.API.Services
+namespace Layer.Application.Services
 {
     public class SendGridEmailSender : IEmailSender
     {

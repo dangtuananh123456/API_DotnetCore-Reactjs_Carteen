@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using IntroSEProject.Models;
+using Layer.Domain.Entities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace Layer.Domain.Interfaces

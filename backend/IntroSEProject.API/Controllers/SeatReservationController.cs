@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
-using IntroSEProject.API.Models;
-using IntroSEProject.API.Services;
-using IntroSEProject.Models;
+using Infrastructure.Data;
+using Layer.Domain.Entities;
+using Layer.Domain.Specifications;
+using Layer.Presentation.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

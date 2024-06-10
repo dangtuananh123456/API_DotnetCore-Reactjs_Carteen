@@ -1,11 +1,12 @@
 ﻿using AutoMapper;
-using IntroSEProject.API.Models;
-using IntroSEProject.API.Services;
-using IntroSEProject.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore.Storage;
+using Infrastructure.Data;
+using Layer.Domain.Entities;
+using Layer.Presentation.Models;
+using Layer.Domain.Specifications;
 
 namespace Layer.Presentation.Controllers
 {
